@@ -136,7 +136,7 @@ pipeline {
             when { expression { params.ACTION == 'Deploy New Version' } }
             steps {
                 withCredentials([
-                    file(credentialsId: 'cosign-key', variable: 'COSIGN_KEY_FILE'),
+                    file(credentialsId: 'cosign-private-key', variable: 'COSIGN_KEY_FILE'),
                     usernamePassword(credentialsId: "${NEXUS_CRED}", usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASS')
                 ]) {
                     sh '''
