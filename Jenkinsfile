@@ -195,8 +195,9 @@ pipeline {
                     try {
                         sh """
                         docker run --rm \
+                        -v \$(pwd):/zap/wrk/:rw \
                         --network host \
-                        -t zaproxy/zap-stable zap-baseline.py \
+                        zaproxy/zap-stable zap-baseline.py \
                         -t http://localhost:${ZAP_PORT} \
                         -r zap_report.html \
 
