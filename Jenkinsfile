@@ -227,8 +227,8 @@ pipeline {
             // Archive SBOM
             archiveArtifacts artifacts: 'sbom.json', fingerprint: true
             
-            // Cleanup
-            cleanWs()
+            // // Cleanup
+            // cleanWs()
         }
     }
 }
